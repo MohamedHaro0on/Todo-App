@@ -71,7 +71,7 @@ function TodoList({ todos, handleTodoActivity, handleDeleteTodo, handleClearComp
 
 
             {/* The Controls ::  */}
-            <footer key={"controls"} className={ClassNames.TodoElement}>
+            <footer key={"controls"} className={ClassNames.Footer}>
                 <Button>{numberOfActiveTodos} items left .</Button>
                 <div>
                     <Button onClick={handleDisplyAllTodos}> All </Button>

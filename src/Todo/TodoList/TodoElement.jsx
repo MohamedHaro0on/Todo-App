@@ -24,6 +24,7 @@ function TodoElement({ element, index, handleDeleteTodo, handleTodoActivity, han
                             needsToChangeValue ?
                                 <form onSubmit = {handleDblClick}>
                                     <input defaultValue={element.value} className={ClassNames.FormControl} onChange={(e) => handleEditTodo(index, e)} />
+                                    
                                 </form>
                                 :
                                 <label className={element.active ? ClassNames.ActiveTodo : ClassNames.CompletedTodo}>{element.value}</label>
