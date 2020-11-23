@@ -1,0 +1,32 @@
+.Form{
+    .Label{
+        position : relative; 
+        width : 100% ;
+        display  : flex ;
+        align-items: center ;
+        justify-content : center ;
+        span{
+            position : absolute ;
+            left : 25px ;
+            font-size : 20px; 
+            cursor: pointer;
+        }
+        .FormControl{
+            padding : 16px 16px 16px 60px; 
+            min-height : 30px;
+            font-style: italic ;
+            box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.03) ;
+            margin : 0px; 
+            outline : none ;
+            line-height: 1.4rem ;
+            width :  100% ;
+            border : none ;
+            @media (min-width:801px) {
+                font-size  : 24px ;
+            }
+            @media (max-width:800px){
+                font-size : 16px ;
+            }
+        }
+    }
+}

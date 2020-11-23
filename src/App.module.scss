@@ -1,0 +1,17 @@
+@import "./_App.module.scss";
+
+.App {
+    background-color: $MainBg;
+    color: $MainColor;
+    min-height: 100vh;
+    display: grid;
+    @media (min-width: 1125px) {
+        grid-template-columns: 20% 75%;
+    }
+    @media (max-width: 1124px) and (min-width: 977px) {
+        grid-template-columns: 30% 70%;
+    }
+    @media (max-width: 976px) {
+        grid-template-columns: 100% 100%;
+    }
+}

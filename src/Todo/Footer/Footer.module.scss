@@ -1,0 +1,19 @@
+@import "../../_App.module.scss"; 
+
+.Footer{
+    line-height : 1.5rem ;
+    letter-spacing: 1px;
+    color : $FooterColor  ;
+    font-size : 12px ;
+    width : 100% ;
+    margin : 65px 0px ;
+    text-align : center ;
+    strong{
+        color : $MainColor  ;
+        padding : 0px 3px; 
+    }
+    a {
+        color : $Danger ;
+        display : block ;
+    }
+}

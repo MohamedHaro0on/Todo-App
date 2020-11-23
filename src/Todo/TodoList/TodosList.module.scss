@@ -1,0 +1,83 @@
+.TodoList {
+    padding: 0px;
+    list-style: none;
+    margin-top: 0px;
+    background-color: #fff ;
+    .TodoElement {
+        padding: 10px 20px;
+        border-bottom: solid 1px #ededed;
+        display: flex;
+        justify-content: space-between;
+        position: relative ;
+        align-items  : center ;
+        flex-wrap : wrap ;
+        height: fit-content ;
+        .Container {
+            display: flex;
+            align-items: center;
+            .CompletedIcon{
+                min-width: 40px;
+                border-radius: 50%;
+                margin-right: 20px;
+                text-align: center;
+                background-color: #fff;
+                border: solid 1px #ededed;
+                min-height : 40px; 
+                cursor: pointer;
+            }
+            .CheckButton {
+                padding: 10px 5px;
+                outline: none;
+                background-color: transparent;
+                outline: none ;
+                border : none ;
+                i{
+                    color : #4BB543 ;
+                    font-size : 24px ;
+                    cursor: pointer;
+                }
+            }
+            .FormControl,
+            .ActiveTodo , .CompletedTodo {
+                padding: 0px 10px;
+                font-size: 24px;
+                min-width : 60% ;
+            }
+            .FormControl{
+                border: solid 1px #ccc ;
+                outline: none;
+                min-height: 50px;
+                color : inherit ;
+                min-width : 155% ;
+                box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2) ;
+            }
+            .ActiveTodo , .CompletedTodo{
+                position: absolute;
+                top : 22% ;
+            }
+            .CompletedTodo{
+                text-decoration: line-through ;
+                color : #d9d9d9 ;
+            }
+        }
+
+        .DeleteButton{
+            color : #cc9a9a ;
+            background-color : transparent  ;
+            border : none ;
+            outline : none ;
+            padding : 10px; 
+            font-size : 24px;
+            font-weight: 100 ;
+            opacity : 0 ;
+            transition : all .4s ;
+            cursor : pointer ;
+        }
+
+        &:hover{
+            .DeleteButton{
+                opacity:  1 ;
+            }
+        }
+    }
+}
