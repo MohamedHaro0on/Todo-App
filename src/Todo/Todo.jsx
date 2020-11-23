@@ -10,16 +10,16 @@ const Todo = () => {
     const [todo, setTodo] = useState("");
     const [todos, setTodos] = useState([]);
 
+
     useEffect(() => {
-        let prevTodos = JSON.parse(localStorage.getItem("todos") || "{}");
-        if (prevTodos && prevTodos.length > 0) {
-            setTodos(prevTodos);
-        }
+        let prevTodos = JSON.parse(localStorage.getItem("todos") || "[]");
+        setTodos(prevTodos)
     }, []);
+
 
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos));
-    }, [todos])
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ const Todo = () => {
     }
 
     const handleTodoActivity = (index) => {
-        if (todos.length) {
+        if (todos) {
             let newTodos = [...todos];
             newTodos[index].active = !newTodos[index].active;
             setTodos(newTodos);
@@ -41,7 +41,7 @@ const Todo = () => {
     }
 
     const handleDeleteTodo = (index) => {
-        if (todos.length) {
+        if (todos) {
             let newTodos = [...todos];
             newTodos.splice(index, 1);
             setTodos(newTodos);
@@ -53,7 +53,7 @@ const Todo = () => {
     }
 
     const handleClearCompletedTodos = () => {
-        if (todos.length) {
+        if (todos) {
             let newTodos = [...todos];
             newTodos = newTodos.filter(element => element.active === true);
             setTodos(newTodos);
@@ -61,7 +61,7 @@ const Todo = () => {
     }
 
     const handleMakeAllTodosCompleted = () => {
-        if (todos.length) {
+        if (todos) {
             let newTodos = [...todos];
             newTodos = newTodos.map(element => {
                 return {
@@ -74,7 +74,7 @@ const Todo = () => {
     }
 
     const handleMakeAllTodosActive = () => {
-        if (todos.length) {
+        if (todos) {
             let newTodos = [...todos];
             newTodos = newTodos.map(element => {
                 return {
@@ -86,9 +86,11 @@ const Todo = () => {
         }
     }
     const handleEditTodo = (index, e) => {
-        let newTodos = [...todos];
-        newTodos[index].value = e.target.value;
-        setTodos(newTodos);
+        if (todos) {
+            let newTodos = [...todos];
+            newTodos[index].value = e.target.value;
+            setTodos(newTodos);
+        }
     }
     return (
         <div className={ClassNames.Container}>
